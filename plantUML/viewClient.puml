@@ -1,0 +1,46 @@
+@startuml ViewClient
+object FactoryTag{
+}
+
+object enumVALIDATOR{
+  ACCEPTED,
+  CIF_NIF,
+  DNI_NIE_CIF,  
+  LETTERSWITHSPACE,
+  MOBILE
+}
+
+
+object Index{
+}
+
+object FactoryFrame{
+ input()
+ labelSelectInput()
+}
+
+object FactoryDataControl{
+ firstname()
+ lastname()
+ nif()
+ mobile()
+}
+
+object ViewClient{
+ register();
+}
+
+object FactoryBox{
+ error();
+}
+
+FactoryFrame *-- FactoryBox
+FactoryFrame *-- FactoryTag
+FactoryBox *-- FactoryTag
+FactoryDataControl *-- FactoryFrame 
+FactoryDataControl -- enumVALIDATOR
+FactoryFrame -- enumVALIDATOR
+ViewClient *-- FactoryDataControl
+
+Index o-- ViewClient
+@enduml

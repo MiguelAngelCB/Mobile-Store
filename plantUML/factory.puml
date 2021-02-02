@@ -1,0 +1,70 @@
+@startuml factory
+object FactoryTag{
+
+}
+object FactoryButton{
+ hamburger()
+ darkLight()
+ scrollTop()
+ submit()
+}
+object FactoryObject{
+ menuButton()
+}
+object FactoryBranding{
+index()
+}
+object FactoryLogo{
+harnina()
+informatica()
+rotuloDiagonal()
+}
+object FactoryMenu{
+index()
+}
+object FactoryFunction{
+darkLight()
+wheather()
+scrollTop()
+contactFormValidations()
+}
+
+object FactoryHeader{
+
+}
+object FactoryFooter{
+}
+object FactoryHome{
+}
+object Index{
+ 
+}
+object FactoryFrame{
+ FrameInput()
+}
+object FactoryDataControl{
+ firstname()
+ lastname()
+}
+object FactoryClient{
+ register();
+}
+FactoryLogo *-- FactoryTag
+FactoryButton *-- FactoryTag
+FactoryMenu *-- FactoryTag
+FactoryFrame *-- FactoryTag
+FactoryDataControl *-- FactoryFrame 
+FactoryObject *-- FactoryMenu
+FactoryClient *-- FactoryDataControl
+FactoryObject *-- FactoryButton
+FactoryBranding *-- FactoryLogo
+FactoryHeader *-- FactoryBranding 
+
+FactoryFooter *-- FactoryButton 
+FactoryHeader *-- FactoryObject
+Index o-- FactoryHeader : header
+Index o-- FactoryFooter : footer
+Index o-- FactoryHome : home
+Index o-- FactoryFunction
+Index o-- FactoryClient
+@enduml

@@ -1,0 +1,96 @@
+/* ----------- Form   contact-form---------*/
+.label-frame-input {
+  display: none;
+}
+.section-formJM {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-width);
+  min-height: 100vh;
+  text-align: center;
+}
+//harni-contact
+.harni-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.harni-form > * {
+  padding: 0.3rem;
+  margin: 0.5rem auto;
+  display: block;
+  width: 100%;
+}
+.harni-form textarea {
+  resize: none;
+}
+.harni-form legend,
+.harni-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.harni-form input,
+.harni-form textarea {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+}
+.harni-form input[type="submit"] {
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+.harni-form ::placeholder {
+  color: rgb(156, 145, 145);
+}
+
+.harni-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+.harni-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+.harni-form-error {
+  margin-top: 1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 800ms ease;
+}
+.harni-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+.none {
+  display: none;
+}
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  }
+}
